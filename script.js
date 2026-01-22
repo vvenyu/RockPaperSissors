@@ -20,11 +20,23 @@ let humanScore = 0;
 let computerScore = 0;
 
 function playRound(humanChoice, computerChoice) {
-    console.log(computerChoice);
-    console.log(humanChoice)
+    console.log(`Computers choice: ${computerChoice}`);
+    console.log(`Your choice: ${humanChoice}`);
+
+    if (humanChoice == computerChoice) {
+        return 'Its a Draw!'
+    } else if (humanChoice == 'paper' && computerChoice == 'rock') {
+        return 'You win!';
+    } else if (humanChoice == 'rock' && computerChoice == 'sissors') {
+        return 'You win!';
+    } else if (humanChoice == 'sissors' && computerChoice == 'paper') {
+        return 'You win!';
+    } else {
+        return 'You lose!';
+    }
 }
 
-const humanSelection = getHumanChoice();
+const humanSelection = getHumanChoice().toLowerCase();
 const computerSelection = getComputerChoice(3);
 
-playRound(humanSelection, computerSelection);
+console.log(playRound(humanSelection, computerSelection));

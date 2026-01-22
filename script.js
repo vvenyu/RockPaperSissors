@@ -39,4 +39,8 @@ function playRound(humanChoice, computerChoice) {
 const humanSelection = getHumanChoice().toLowerCase();
 const computerSelection = getComputerChoice(3);
 
-console.log(playRound(humanSelection, computerSelection));
+function playGame() {
+    playRound(humanSelection, computerSelection);
+}
+
+playGame();

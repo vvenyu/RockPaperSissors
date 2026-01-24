@@ -106,7 +106,7 @@ function playGame() {
 
     if (humanScore > computerScore) {
         return 'YOU WON THE GAME!!';
-    } else if (humanScore = computerScore) {
+    } else if (humanScore == computerScore) {
         return 'ITS A DRAW!!'
     } else {
         return 'YOU LOSE THE GAME!!'

@@ -16,31 +16,101 @@ function getHumanChoice() {
 }
 
 
-let humanScore = 0;
-let computerScore = 0;
+function playGame() {
+    function playRound(humanChoice, computerChoice) {
+        console.log(`Computers choice: ${computerChoice}`);
+        console.log(`Your choice: ${humanChoice}`);
+    
+        if (humanChoice == computerChoice) {
+            return 'Its a Draw!'
+        } else if (humanChoice == 'paper' && computerChoice == 'rock') {
+            return 'You win!';
+        } else if (humanChoice == 'rock' && computerChoice == 'sissors') {
+            return 'You win!';
+        } else if (humanChoice == 'sissors' && computerChoice == 'paper') {
+            return 'You win!';
+        } else {
+            return 'You lose!';
+        }
+    }
 
-function playRound(humanChoice, computerChoice) {
-    console.log(`Computers choice: ${computerChoice}`);
-    console.log(`Your choice: ${humanChoice}`);
+    let humanScore = 0;
+    let computerScore = 0;
+    
+    let humanSelection = getHumanChoice().toLowerCase();
+    let computerSelection = getComputerChoice(3);
+    let gameResult = playRound(humanSelection, computerSelection);
+    console.log(gameResult);
 
-    if (humanChoice == computerChoice) {
-        return 'Its a Draw!'
-    } else if (humanChoice == 'paper' && computerChoice == 'rock') {
-        return 'You win!';
-    } else if (humanChoice == 'rock' && computerChoice == 'sissors') {
-        return 'You win!';
-    } else if (humanChoice == 'sissors' && computerChoice == 'paper') {
-        return 'You win!';
+    if (gameResult == 'You win!') {
+        humanScore++;
+    } else if(gameResult == 'Its a Draw!') {
+    
     } else {
-        return 'You lose!';
+        computerScore++;
+    }
+
+    humanSelection = getHumanChoice().toLowerCase();
+    computerSelection = getComputerChoice(3);
+    gameResult = playRound(humanSelection, computerSelection);
+    console.log(gameResult);
+
+    if (gameResult == 'You win!') {
+        humanScore++;
+    } else if(gameResult == 'Its a Draw!') {
+    
+    } else {
+        computerScore++;
+    }
+
+    humanSelection = getHumanChoice().toLowerCase();
+    computerSelection = getComputerChoice(3);
+    gameResult = playRound(humanSelection, computerSelection);
+    console.log(gameResult);
+
+    if (gameResult == 'You win!') {
+        humanScore++;
+    } else if(gameResult == 'Its a Draw!') {
+    
+    } else {
+        computerScore++;
+    }
+
+    humanSelection = getHumanChoice().toLowerCase();
+    computerSelection = getComputerChoice(3);
+    gameResult = playRound(humanSelection, computerSelection);
+    console.log(gameResult);
+
+    if (gameResult == 'You win!') {
+        humanScore++;
+    } else if(gameResult == 'Its a Draw!') {
+    
+    } else {
+        computerScore++;
+    }
+
+    humanSelection = getHumanChoice().toLowerCase();
+    computerSelection = getComputerChoice(3);
+    gameResult = playRound(humanSelection, computerSelection);
+    console.log(gameResult);
+
+    if (gameResult == 'You win!') {
+        humanScore++;
+    } else if(gameResult == 'Its a Draw!') {
+    
+    } else {
+        computerScore++;
+    }
+    
+    console.log(`Your score is: ${humanScore}, and computers score is: ${computerScore}.`);
+
+    if (humanScore > computerScore) {
+        return 'YOU WON THE GAME!!';
+    } else if (humanScore = computerScore) {
+        return 'ITS A DRAW!!'
+    } else {
+        return 'YOU LOSE THE GAME!!'
     }
 }
 
-const humanSelection = getHumanChoice().toLowerCase();
-const computerSelection = getComputerChoice(3);
-
-function playGame() {
-    playRound(humanSelection, computerSelection);
-}
-
-playGame();
+console.log(playGame());

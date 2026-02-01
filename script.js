@@ -44,55 +44,44 @@ function playGame() {
     paperBtn.addEventListener('click', () => {
         const roundResult = playRound('paper', getComputerChoice(3));
         textResult.textContent = roundResult;
-        score.textContent = `Your score is: ${humanScore}, and computers score is: ${computerScore}.`
         if (roundResult === 'You win!') {
-            humanScore++;
+            return humanScore++;
         } else if (roundResult === 'You lose!') {
-            computerScore++;
+            return computerScore++;
         } else;
-        if (humanScore == 0) {
-            return 'YOU WON THE GAME';
-        } else if (computerScore == 5) {
-            return 'YOU LOSE THE GAME';
-        } else;
+        score.textContent = `Your score is: ${humanScore}, and computers score is: ${computerScore}.`
     });
     
     sissorsBtn.addEventListener('click', () => {
         const roundResult = playRound('sissors', getComputerChoice(3));
         textResult.textContent = roundResult;
-        score.textContent = `Your score is: ${humanScore}, and computers score is: ${computerScore}.`
         if (roundResult === 'You win!') {
-            humanScore++;
+            return humanScore++;
         } else if (roundResult === 'You lose!') {
-            computerScore++;
+            return computerScore++;
         } else;   
-        if (humanScore == 5) {
-            return 'YOU WON THE GAME';
-        } else if (computerScore == 5) {
-            return 'YOU LOSE THE GAME';
-        } else;     
+        score.textContent = `Your score is: ${humanScore}, and computers score is: ${computerScore}.`  
     });
     
     rockBtn.addEventListener('click', () => {
         const roundResult = playRound('rock', getComputerChoice(3));
         textResult.textContent = roundResult;
-        score.textContent = `Your score is: ${humanScore}, and computers score is: ${computerScore}.`
         if (roundResult === 'You win!') {
-            humanScore++;
+            return humanScore++;
         } else if (roundResult === 'You lose!') {
-            computerScore++;
+            return computerScore++;
         } else;    
-        if (humanScore == 5) {
-            return 'YOU WON THE GAME';
-        } else if (computerScore == 5) {
-            return 'YOU LOSE THE GAME';
-        } else;   
+        score.textContent = `Your score is: ${humanScore}, and computers score is: ${computerScore}.`
     });
     
-}
-
+    if (humanScore == 5) {
+        return 'YOU WON THE GAME';
+    } else if (computerScore == 5) {
+        return 'YOU LOSE THE GAME';
+    } else return 'idk';
+};
 console.log(playGame());
-result.appendChild(gameResult)
+result.appendChild(gameResult);
 result.appendChild(textComputerChoice);
 result.appendChild(textHumanChoice);
 result.appendChild(textResult);
